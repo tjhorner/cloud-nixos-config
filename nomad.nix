@@ -9,6 +9,10 @@
     settings = {
       datacenter = "gcp";
 
+      acl = {
+        enabled = true;
+      };
+
       server = {
         enabled = true;
         bootstrap_expect = 1;

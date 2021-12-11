@@ -8,6 +8,7 @@
 
     settings = {
       datacenter = "gcp";
+      bind_addr = "{{ GetAllInterfaces | include \"name\" \"^tailscale\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
 
       acl = {
         enabled = true;

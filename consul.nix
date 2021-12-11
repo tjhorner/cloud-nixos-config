@@ -4,8 +4,8 @@
     enable = true;
     webUi = true;
 
-    extraConfig = {
-      bind = "{{ GetAllInterfaces | include \"name\" \"^tailscale\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
-    };
+    # extraConfig = {
+    #   bind = "{{ GetAllInterfaces | include \"name\" \"^tailscale\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
+    # };
   };
 }

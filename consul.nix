@@ -9,6 +9,7 @@
       bootstrap = true;
       bootstrap_expect = 1;
 
+      datacenter = "gcp";
       bind_addr = "{{ GetAllInterfaces | include \"name\" \"^eth\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
 
       addresses = {

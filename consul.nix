@@ -5,6 +5,7 @@
     webUi = true;
 
     extraConfig = {
+      server = true;
       bootstrap = true;
       bootstrap_expect = 1;
 

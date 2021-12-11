@@ -15,9 +15,9 @@
         serf = "{{ GetAllInterfaces | include \"name\" \"^tailscale\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
       };
 
-      acl = {
-        enabled = true;
-      };
+      # acl = {
+      #   enabled = true;
+      # };
 
       server = {
         enabled = true;

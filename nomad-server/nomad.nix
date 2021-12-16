@@ -5,6 +5,7 @@
   systemd.services.nomad-dynamic-config = {
     enable = true;
     before = [ "nomad.service" ];
+    wantedBy = [ "nomad.service" ];
     serviceConfig.Type = "oneshot";
 
     script = ''

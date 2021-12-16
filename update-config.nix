@@ -10,6 +10,9 @@
 
     path = with pkgs; [ bash nix ];
 
+    restartIfChanged = false;
+    stopIfChanged = false;
+
     script = ''
       cd /etc/nixos
       ${pkgs.git}/bin/git pull

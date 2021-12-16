@@ -15,14 +15,16 @@
     '';
   };
 
-  environment.etc."nomad.d/docker.hcl" = {
-    text = ''
-      plugin "docker" {
-        config {
-          allow_privileged = true
+  environment.etc = {
+    "nomad.d/docker.hcl" = {
+      text = ''
+        plugin "docker" {
+          config {
+            allow_privileged = true
+          }
         }
-      }
-    ''
+      '';
+    };
   };
 
   services.nomad = {

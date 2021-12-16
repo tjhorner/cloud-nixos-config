@@ -3,7 +3,7 @@
   imports = [
     <nixpkgs/nixos/modules/virtualisation/google-compute-image.nix>
     ./base.nix
-    ./tailscale.nix
+    # ./tailscale.nix
     ./consul.nix
     ./nomad.nix
     ./update-config.nix

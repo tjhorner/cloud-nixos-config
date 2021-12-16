@@ -9,9 +9,9 @@
     settings = {
       datacenter = "gcp";
 
-      advertise = {
-        serf = "{{ GetAllInterfaces | include \"name\" \"^tailscale\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
-      };
+      # advertise = {
+      #   serf = "{{ GetAllInterfaces | include \"name\" \"^eth\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
+      # };
 
       # acl = {
       #   enabled = true;

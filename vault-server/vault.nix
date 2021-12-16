@@ -44,5 +44,6 @@
     address = "0.0.0.0:8200";
     storageBackend = "gcs";
     extraSettingsPaths = [ "/etc/vault.d" ];
+    extraConfig = "ui = true";
   };
 }

@@ -3,6 +3,6 @@
   imports = [
     ../base.nix
     ../consul-client.nix
-    ./nomad.nix
+    ./vault.nix
   ];
 }

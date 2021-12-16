@@ -20,12 +20,12 @@
     '';
   };
 
-  systemd.timers.update-nixos-config = {
-    wantedBy = [ "timers.target" ];
-    partOf = [ "update-nixos-config.service" ];
-    timerConfig = {
-      OnCalendar = "*:0/5"; # every 5 mins
-      Unit = "update-nixos-config.service";
-    };
-  };
+  # systemd.timers.update-nixos-config = {
+  #   wantedBy = [ "timers.target" ];
+  #   partOf = [ "update-nixos-config.service" ];
+  #   timerConfig = {
+  #     OnCalendar = "*:0/5"; # every 5 mins
+  #     Unit = "update-nixos-config.service";
+  #   };
+  # };
 }

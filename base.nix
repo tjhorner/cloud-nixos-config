@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 {
+  systemd.services.google-startup-scripts.enable = false;
+
   # Modify the startup script service to allow access to various
   # tools so that it can bootstrap a Nix config from somewhere else
   systemd.services.google-startup-scripts.environment = config.nix.envVars // {

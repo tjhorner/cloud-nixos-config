@@ -6,12 +6,9 @@
 
     extraConfig = {
       server = true;
-      bootstrap = true;
-      bootstrap_expect = 1;
-
       datacenter = "gcp";
       retry_join = [ "provider=gce tag_value=consul-server" ];
-      bind_addr = "{{ GetAllInterfaces | include \"name\" \"^eth\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
+      bind_addr = "{{ GetAllInterfaces | include \"name\" \"^eth\" | include \"flags\" \"forwardable|up\" | include \"type\" \"ipv4\" | attr \"address\" }}";
 
       # addresses = {
       #   http = "{{ GetAllInterfaces | include \"name\" \"^tailscale\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";

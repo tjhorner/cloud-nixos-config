@@ -6,7 +6,7 @@
 
     extraConfig = {
       server = true;
-      bootstrap-expect = 3;
+      bootstrap_expect = 3;
 
       datacenter = "gcp";
       retry_join = [ "provider=gce tag_value=consul-server" ];

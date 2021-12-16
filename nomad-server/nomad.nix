@@ -45,14 +45,6 @@
     settings = {
       datacenter = "gcp";
 
-      # advertise = {
-      #   serf = "{{ GetAllInterfaces | include \"name\" \"^eth\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
-      # };
-
-      # acl = {
-      #   enabled = true;
-      # };
-
       server = {
         enabled = true;
 
@@ -63,6 +55,11 @@
 
       client = {
         enabled = true;
+      };
+
+      vault = {
+        enabled = true;
+        address = "http://vault.service.consul:8200";
       };
     };
   };

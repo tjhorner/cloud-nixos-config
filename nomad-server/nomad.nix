@@ -31,6 +31,7 @@
     enable = true;
     enableDocker = true;
     extraSettingsPaths = [ "/etc/nomad.d" ];
+    dropPrivileges = false;
 
     settings = {
       datacenter = "gcp";

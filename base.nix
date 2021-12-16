@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  systemd.services.google-startup-scripts.enable = false;
+  systemd.services.google-startup-scripts.wantedBy = [ ];
 
   # Modify the startup script service to allow access to various
   # tools so that it can bootstrap a Nix config from somewhere else

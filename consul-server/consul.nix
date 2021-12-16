@@ -10,7 +10,7 @@
       bootstrap_expect = 1;
 
       datacenter = "gcp";
-      retry_join = "provider=gce tag_value=consul-server";
+      retry_join = [ "provider=gce tag_value=consul-server" ];
       bind_addr = "{{ GetAllInterfaces | include \"name\" \"^eth\" | include \"flags\" \"forwardable|up\" | attr \"address\" }}";
 
       # addresses = {

@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    <nixpkgs/nixos/modules/virtualisation/google-compute-image.nix>
+    ./update-config.nix
+  ];
+
   # Modify the startup script service to allow access to various
   # tools so that it can bootstrap a Nix config from somewhere else
   systemd.services.google-startup-scripts.environment = config.nix.envVars // {
@@ -18,4 +23,10 @@
     nix
     nixos-rebuild
   ];
+
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
+  system.autoUpgrade.enable = true;
 }

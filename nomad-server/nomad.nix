@@ -12,15 +12,24 @@
       BOOTSTRAP_EXPECT=$(${pkgs.curl}/bin/curl "http://metadata.google.internal/computeMetadata/v1/instance/attributes/bootstrap-expect" -H "Metadata-Flavor: Google")
       mkdir -p /etc/nomad.d
       echo "server { bootstrap_expect = $BOOTSTRAP_EXPECT }" > /etc/nomad.d/bootstrap_expect.hcl
+
+      mkdir -p /opt/traefik
     '';
   };
 
   environment.etc = {
-    "nomad.d/docker.hcl" = {
+    "nomad.d/client.hcl" = {
       text = ''
         plugin "docker" {
           config {
             allow_privileged = true
+          }
+        }
+
+        client {
+          host_volume "traefik" {
+            path = "/opt/traefik"
+            read_only = false
           }
         }
       '';

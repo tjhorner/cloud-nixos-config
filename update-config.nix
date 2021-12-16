@@ -12,8 +12,8 @@
 
     script = ''
       cd /etc/nixos
-      ${pkgs.git} pull
-      ${pkgs.nixos-rebuild} switch
+      ${pkgs.git}/bin/git pull
+      ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch
     '';
   };
 

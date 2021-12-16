@@ -2,11 +2,18 @@
 {
   systemd.services.update-nixos-config = {
     serviceConfig.Type = "oneshot";
-    path = with pkgs; [ git bash nix nixos-rebuild ];
+
+    environment = config.nix.envVars // {
+      inherit (config.environment.sessionVariables) NIX_PATH;
+      HOME = "/root";
+    } // config.networking.proxy.envVars;
+
+    path = with pkgs; [ bash nix ];
+
     script = ''
       cd /etc/nixos
-      git pull
-      nixos-rebuild switch
+      ${pkgs.git} pull
+      ${pkgs.nixos-rebuild} switch
     '';
   };
 

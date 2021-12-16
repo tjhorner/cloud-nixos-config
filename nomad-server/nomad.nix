@@ -15,6 +15,16 @@
     '';
   };
 
+  environment.etc."nomad.d/docker.hcl" = {
+    text = ''
+      plugin "docker" {
+        config {
+          allow_privileged = true
+        }
+      }
+    ''
+  };
+
   services.nomad = {
     enable = true;
     enableDocker = true;

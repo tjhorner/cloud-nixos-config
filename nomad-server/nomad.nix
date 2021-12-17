@@ -59,7 +59,7 @@
 
       vault = {
         enabled = true;
-        address = "http://vault.service.consul:8200";
+        address = "http://vault-server-1:8200";
       };
     };
   };
